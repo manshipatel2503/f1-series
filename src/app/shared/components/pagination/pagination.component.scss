@@ -1,0 +1,13 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    .pagination-per-page{
+        float: left;
+        display: inherit;
+        padding: 5px;
+    }
+    .pagination-buttons{
+        float: right;
+        padding: 5px;
+    }
+}

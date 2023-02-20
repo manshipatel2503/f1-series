@@ -1,0 +1,29 @@
+<div class="pagination">
+  <div class="pagination-per-page">
+    <label>Per Page:</label>
+    <select class="form-select form-select-sm" aria-label="Select the number of items to display per page"
+      (change)="updatePagination($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="all">All</option>
+    </select>
+  </div>
+  <div class="pagination-buttons">
+    <span>Page <strong>{{ currentPage }}</strong> of
+      <strong>
+        <span *ngIf="totalPagesMax">{{ this.max }}+</span>
+        <span *ngIf="!totalPagesMax">{{ totalPages }}</span>
+      </strong></span>
+    <button (click)="changePage($event)" [disabled]="!showBackButton" aria-label="Previous Page" value="-"
+      class="btn btn-dark m-1">
+      &lt;
+    </button>
+    <button (click)="changePage($event)" [disabled]="!showForwardButton" aria-label="Next Page" value="+"
+      class="btn btn-dark">
+      &gt;
+    </button>
+  </div>
+</div>

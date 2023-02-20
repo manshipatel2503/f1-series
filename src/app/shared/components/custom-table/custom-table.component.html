@@ -1,0 +1,24 @@
+<div class="table-responsive px-2">
+  <table class="table table-hover">
+    <thead #dataTableHeader class="bg-black text-white">
+      <tr>
+        <th>No.</th>
+        <th scope="col" *ngFor="let item of headerData">{{ item.header }}</th>
+      </tr>
+    </thead>
+    <tbody #dataTableBody *ngIf="tableData">
+      <tr scope="row" *ngFor="let row of tableData | slice:showFromIndex:showToIndex; let i = index;"
+        [ngClass]="{ 'row-highlight': row.highlight ? row.highlight : '' }">
+        <td>{{i+1 + showFromIndex}}</td>
+        <td *ngFor="let headerItem of headerData">
+          <span *ngIf="headerItem.field != 'action'">
+            {{ row[headerItem.field] }} </span>
+          <span *ngIf="headerItem.field == 'action'">
+            <button class="row-action">action</button></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-pagination *ngIf="tableData && (tableData.length > 7)" [max]="paginatorCounterMax" [length]="tableData.length"
+    [perPage]="paginationItemsPerPage" (paginationAction)="paginationChange($event)"></app-pagination>
+</div>

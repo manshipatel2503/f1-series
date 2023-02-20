@@ -1,0 +1,12 @@
+.row-highlight {
+  background-color: #38383f;
+  color: #fff;
+}
+
+.row-highlight:hover {
+  background-color: #e10600;
+  color: #fff !important;
+  td{
+    color: #fff !important;
+  }
+}

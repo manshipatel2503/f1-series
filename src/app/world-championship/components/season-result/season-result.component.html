@@ -1,0 +1,6 @@
+<app-header [title]="getTitle()"></app-header>
+<button type="button" (click)="back()" class="btn btn-dark m-2"> <i class="bi bi-arrow-left-circle"></i>
+  Seasons</button>
+
+<app-custom-table [tableData]="seasonResult" [headerData]="columns" 
+  [paginatorCounterMax]="100  " [paginationItemsPerPage]="15"></app-custom-table>
