@@ -15,7 +15,7 @@ For UI/UX I have used the bootstrap to keep it simple.
 
 # Steps to run the Application
 1. Clone using HTTP or SSH
-2. ng build
+2. npm i
 3. ng serve
 4. Go to browser and open http://localhost:4200 
 
